@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs";
 import { v2 as cloudinary } from "cloudinary";
 
-import Notification from "../models/notification.model.js";
+import Notification from "../models/notification.models.js";
 import User from "../models/user.models.js";
 
 export const getUserProfile = async (req, res) => {
@@ -66,7 +66,7 @@ export const followUnfollowUser = async (req, res) => {
 			res.status(200).json({ message: "User followed successfully" });
 		}
 	} catch (error) {
-		console.log("Error in getUserProfile:", error.message);
+		console.log("Error in followUnfollowUser: ", error.message);
 		res.status(500).json({ error: error.message });
 	}
 };
@@ -94,7 +94,7 @@ export const getSuggestedUsers = async (req, res) => {
 
 		res.status(200).json(suggestedUsers);
 	} catch (error) {
-		console.log("Error in getUserProfile:", error.message);
+		console.log("Error in getSuggestedUsers: ", error.message);
 		res.status(500).json({ error: error.message });
 	}
 };
@@ -169,7 +169,7 @@ export const updateUser = async (req, res) => {
 		user.password = null;
 		return res.status(200).json(user);
 	} catch (error) {
-		console.log("Error in getUserProfile:", error.message);
+		console.log("Error in updateUser: ", error.message);
 		res.status(500).json({ error: error.message });
 	}
 };
