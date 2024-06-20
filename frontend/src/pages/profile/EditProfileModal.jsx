@@ -84,6 +84,7 @@ const EditProfileModal = () => {
 								value={formData.newPassword}
 								name="newPassword"
 								onChange={handleInputChange}
+								
 							/>
 						</div>
 						<input
